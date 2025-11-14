@@ -1,0 +1,9 @@
+﻿preprocessing:
+  resample: true
+  normalize: true
+  remove_silence: true
+  noise_reduce: true
+vad:
+  enabled: true
+  aggressiveness: 2
+  frame_duration: 30

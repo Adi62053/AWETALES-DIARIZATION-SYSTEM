@@ -1,0 +1,43 @@
+# configs/asr_config.yaml (updated)
+asr:
+  streaming:
+    model_size: "paraformer-zh-streaming"
+    vad_model: "fsmn-vad"
+    punc_model: "ct-punc"
+    chunk_size: 0.5
+    shift_size: 0.25
+    sample_rate: 16000
+    hotword_file: null
+    beam_size: 5
+    batch_size: 1
+    device: "cuda"
+    
+  offline:
+    model_size: "paraformer-zh"
+    vad_model: "fsmn-vad"
+    punc_model: "ct-punc"
+    sample_rate: 16000
+    batch_size: 4
+    device: "cuda"
+    
+  whisper:
+    model_size: "large-v2"
+    language: "zh"
+    task: "transcribe"
+    beam_size: 5
+    best_of: 5
+    temperature: 0.0
+    without_timestamps: false
+    device: "cuda"
+    
+  performance:
+    max_latency: 0.5
+    min_confidence: 0.6
+    max_buffer_size: 10.0
+    enable_partial_results: true
+    word_level_timestamps: true
+    
+  fallback:
+    enable_fallback: true
+    fallback_to_whisper: true
+    confidence_threshold: 0.3

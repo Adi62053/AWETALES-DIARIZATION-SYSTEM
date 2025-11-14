@@ -1,0 +1,8 @@
+﻿diarization:
+  model: pyannote
+  min_speakers: 1
+  max_speakers: 4
+  threshold: 0.5
+clustering:
+  method: spectral
+  embeddings: xvector

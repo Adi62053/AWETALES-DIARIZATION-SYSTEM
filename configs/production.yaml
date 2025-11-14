@@ -1,0 +1,27 @@
+environment: production
+logging:
+  level: INFO
+  format: json
+models:
+  cache_dir: /app/models
+  download_missing: false
+audio:
+  sample_rate: 16000
+  chunk_duration: 2.0
+  max_silence_duration: 30.0
+processing:
+  enable_denoising: true
+  enable_enhancement: true
+  enable_punctuation: true
+  default_language: en
+performance:
+  max_concurrent_sessions: 10
+  target_latency_ms: 500
+  real_time_factor: 0.8
+monitoring:
+  enabled: true
+  metrics_port: 8000
+  health_check_interval: 10
+redis:
+  url: redis://redis:6379
+  timeout: 30

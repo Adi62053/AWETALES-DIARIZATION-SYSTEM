@@ -1,0 +1,19 @@
+﻿{
+    "performance":  {
+                        "cpu_usage_percent":  45.2,
+                        "processing_time":  2.5,
+                        "real_time_factor":  0.08,
+                        "memory_usage_mb":  156.3
+                    },
+    "session_id":  "55f816fb-814b-4113-a6d9-b9d7d37bc4a8",
+    "quality":  {
+                    "si_sdr_db":  7.8,
+                    "der_percent":  6.5,
+                    "wer_percent":  11.2
+                },
+    "audio_info":  {
+                       "sample_rate":  16000,
+                       "duration_seconds":  30.5,
+                       "channels":  1
+                   }
+}

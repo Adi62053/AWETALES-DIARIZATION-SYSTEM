@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awetales-diarization
+  namespace: awetales
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: awetales-diarization
+  template:
+    metadata:
+      labels:
+        app: awetales-diarization
+    spec:
+      containers:
+      - name: api
+        image: awetales/diarization:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: MODEL_CACHE_DIR
+          value: "/app/models"
+        - name: REDIS_URL
+          value: "redis://redis:6379"
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+            memory: "8Gi"
+            cpu: "2"
+          requests:
+            nvidia.com/gpu: 1
+            memory: "4Gi"
+            cpu: "1"
+        volumeMounts:
+        - name: model-storage
+          mountPath: /app/models
+        - name: data-storage
+          mountPath: /app/data
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: model-storage
+        persistentVolumeClaim:
+          claimName: model-pvc
+      - name: data-storage
+        persistentVolumeClaim:
+          claimName: data-pvc
+      nodeSelector:
+        accelerator: nvidia-gpu
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: awetales-service
+  namespace: awetales
+spec:
+  selector:
+    app: awetales-diarization
+  ports:
+  - port: 8000
+    targetPort: 8000
+  type: LoadBalancer

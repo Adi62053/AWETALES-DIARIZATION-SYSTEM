@@ -1,0 +1,17 @@
+﻿AWETALES DIARIZATION RESULTS - Session: 55f816fb-814b-4113-a6d9-b9d7d37bc4a8
+===================================================
+
+Audio File: test_final.wav
+Processing Time: 2.5 seconds
+Status: Completed
+
+SPEAKER 1 (speaker1):
+---------------------
+[0.0s - 5.2s] Hello, this is an example transcription from the Awetales system.
+[8.7s - 15.3s] This demonstrates how speaker diarization would work with real audio.
+
+SUMMARY:
+--------
+Total Duration: 30.5 seconds
+Speaker Count: 1
+Confidence: High (89-92%)

@@ -1,0 +1,25 @@
+# configs/punctuation_config.yaml
+punctuation:
+  model_name: "ct-transformer"
+  language: "zh"
+  max_length: 512
+  batch_size: 16
+  enable_capitalization: true
+  enable_punctuation: true
+  enable_normalization: true
+  confidence_threshold: 0.7
+  
+  # Language-specific settings
+  chinese:
+    punctuation_marks: ["，", "。", "？", "！", "：", "；"]
+    continuous_text: true
+    
+  english:
+    punctuation_marks: [",", ".", "?", "!", ":", ";"]
+    capitalize_proper_nouns: true
+    capitalize_sentence_start: true
+  
+  performance:
+    processing_batch_size: 32
+    cache_size: 1000
+    enable_async_processing: true

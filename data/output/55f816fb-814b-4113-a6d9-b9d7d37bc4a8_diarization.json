@@ -1,0 +1,29 @@
+﻿{
+    "status":  "completed",
+    "processing_time":  2.5,
+    "session_id":  "55f816fb-814b-4113-a6d9-b9d7d37bc4a8",
+    "speakers":  [
+                     {
+                         "segments":  [
+                                          {
+                                              "end":  5.2,
+                                              "confidence":  0.89,
+                                              "text":  "Hello, this is an example transcription from the Awetales system.",
+                                              "start":  0
+                                          },
+                                          {
+                                              "end":  15.3,
+                                              "confidence":  0.92,
+                                              "text":  "This demonstrates how speaker diarization would work with real audio.",
+                                              "start":  8.7
+                                          }
+                                      ],
+                         "speaker_id":  "speaker1"
+                     }
+                 ],
+    "metadata":  {
+                     "speaker_count":  1,
+                     "audio_duration":  30.5,
+                     "audio_file":  "test_final.wav"
+                 }
+}

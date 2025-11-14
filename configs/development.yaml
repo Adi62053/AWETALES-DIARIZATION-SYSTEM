@@ -1,0 +1,24 @@
+environment: development
+logging:
+  level: DEBUG
+  format: json
+models:
+  cache_dir: ./models
+  download_missing: true
+audio:
+  sample_rate: 16000
+  chunk_duration: 2.0
+  max_silence_duration: 10.0
+processing:
+  enable_denoising: true
+  enable_enhancement: true
+  enable_punctuation: true
+  default_language: en
+performance:
+  max_concurrent_sessions: 5
+  target_latency_ms: 500
+  real_time_factor: 1.0
+monitoring:
+  enabled: true
+  metrics_port: 8000
+  health_check_interval: 30

@@ -1,0 +1,9 @@
+﻿streaming:
+  chunk_size: 1024
+  buffer_size: 8192
+  latency_target: 500
+  reconnect_timeout: 30
+websocket:
+  max_connections: 10
+  ping_interval: 20
+  ping_timeout: 30

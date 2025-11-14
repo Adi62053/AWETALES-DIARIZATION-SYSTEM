@@ -1,0 +1,11 @@
+﻿output:
+  formats:
+  - wav
+  - json
+  - text
+  quality: high
+  metadata: true
+paths:
+  input: data/input
+  output: data/output
+  temp: data/temp
